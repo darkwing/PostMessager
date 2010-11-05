@@ -36,7 +36,7 @@ var PostMessager  = new Class({
 	initialize: function(destFrame,options) {
 		this.setOptions(options);
 		this.source = document.id(this.options.source);
-		this.dest = document.id(destFrame);
+		this.dest = destFrame;
 		
 		this.allowReceive = this.options.allowReceive;
 		this.allowSend = this.options.allowSend;
