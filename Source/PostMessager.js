@@ -27,7 +27,7 @@ var PostMessager  = new Class({
 		allowReceive: true,
 		allowSend: true,
 		source: window,
-		validURIs: [] /*,
+		validReceiveURIs: [] /*,
 		onSend: $empty,
 		onReceive: $empty,
 		*/
@@ -41,11 +41,11 @@ var PostMessager  = new Class({
 		this.allowReceive = this.options.allowReceive;
 		this.allowSend = this.options.allowSend;
 		
-		this.validURIs = this.options.validURIs;
+		this.validURIs = this.options.validReceiveURIs;
 		
 		this.listener = function(e) {
 			if(this.allowReceive && (this.validURIs.length == 0 || this.validURIs.contains(e.origin))) {
-				this.fireEvent('receive',[e,this.source,this.dest]);
+				this.fireEvent('receive',[e.data,e.source,e.origin]);
 			}
 		}.bind(this);
 		
@@ -56,7 +56,7 @@ var PostMessager  = new Class({
 	send: function(message) {
 		if(this.allowSend) {
 			destFrame.postMessage(message);
-			this.fireEvent('send',[message,this.source,this.dest]);
+			this.fireEvent('send',[message,this.dest]);
 		}
 	},
 	
