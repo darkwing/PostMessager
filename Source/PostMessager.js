@@ -58,7 +58,7 @@ var PostMessager  = new Class({
 			destFrame.postMessage(message);
 			this.fireEvent('send',[message,this.source,this.dest]);
 		}
-	}
+	},
 	
 	start: function() {
 		if(!this.started) {
