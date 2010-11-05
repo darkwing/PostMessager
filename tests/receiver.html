@@ -5,14 +5,18 @@
 		
 	</style>
 	<script src="http://davidwalsh.name/dw-content/mootools-1.3.js"></script>
-	<script src="../Source/PostMessager.js"></script>
+	<script src="http://test.local/postmessager/Source/PostMessager.js"></script>
 	<script>
-		window.addEvent('load',function() {
+		window.addEvent('domready',function() {
 			//post messager
-			
+			var pm = new PostMessager(window,{
+				allowReceive: true,
+				validReceiveURIs: ['http://davidwalsh.name'],
+				onReceive: function(message,source,origin) {
+					this.reply('Got it!',source,origin);
+				}
+			});
 		});
-		
-		
 	</script>
 </head>
 <body>

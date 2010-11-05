@@ -30,6 +30,7 @@ var PostMessager  = new Class({
 		validReceiveURIs: [] /*,
 		onSend: $empty,
 		onReceive: $empty,
+		onReply: $empty
 		*/
 	},
 	
