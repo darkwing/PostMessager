@@ -14,14 +14,14 @@ PostMessager instances can be created at any time.  Two arguments are accepted: 
 	#JS
 	
 	/* Get hold of an iFrame */
-	var domain = 'http://jpmcts.local';
+	var domain = 'http://domain2.com';
 	var iframe = document.id('listenerFrame').contentWindow;
 	
 	/* Create a PostMessager instance */
 	var messager = new PostMessager(iframe,{
 		allowReceive: true,
 		allowSend: true,
-		validReceiveURIs: ['http://jpmcts.local'],
+		validReceiveURIs: ['http://domain2.com'],
 		onSend: function(message,dest) {
 			console.log('sending "',message,'" to ',dest);
 		},
@@ -30,6 +30,9 @@ PostMessager instances can be created at any time.  Two arguments are accepted: 
 			this.reply('Got it!',source,origin);
 		}
 	});
+	
+	/* Send a message to the iFrame! */
+	messager.send('Hello from the parent window!',domain);
 	
 PostMessager handles sending, receiving, and replying to messages.  Optimally you would add an instance to each frame.
 
