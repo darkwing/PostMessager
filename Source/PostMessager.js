@@ -38,6 +38,8 @@ var PostMessager  = new Class({
 		this.source = document.id(this.options.source);
 		this.dest = destFrame;
 		
+		console.log('this.dest is:  ',this.dest);
+		
 		this.allowReceive = this.options.allowReceive;
 		this.allowSend = this.options.allowSend;
 		
@@ -60,9 +62,10 @@ var PostMessager  = new Class({
 		}
 	},
 	
-	reply: function(message,source) {
-		source.postMessage(message);
-		this.fireEvent('reply',[message,source]);
+	reply: function(message,source,origin) {
+		console.log(message,source,origin);
+		source.postMessage(message,origin);
+		this.fireEvent('reply',[message,source,origin]);
 	},
 	
 	start: function() {
