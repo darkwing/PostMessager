@@ -60,6 +60,11 @@ var PostMessager  = new Class({
 		}
 	},
 	
+	reply: function(message,source) {
+		source.postMessage(message);
+		this.fireEvent('reply',[message,source]);
+	},
+	
 	start: function() {
 		if(!this.started) {
 			sourceFrame.addEvent('message',this.listener);
