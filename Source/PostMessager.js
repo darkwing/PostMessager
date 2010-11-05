@@ -55,7 +55,7 @@ var PostMessager  = new Class({
 	
 	send: function(message,URI) {
 		if(this.allowSend) {
-			this.destFrame.postMessage(message,URI);
+			this.dest.postMessage(message,URI);
 			this.fireEvent('send',[message,this.dest]);
 		}
 	},
