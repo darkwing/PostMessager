@@ -1,3 +1,21 @@
+/*
+---
+description:     PostMessager
+
+authors:
+  - David Walsh (http://davidwalsh.name)
+
+license:
+  - MIT-style license
+
+requires:
+  core/1.2.1:   '*'
+
+provides:
+  - PostMessager
+...
+*/
+
 /* navive base onMessage support */
 Element.NativeEvents.message = 2;
 Element.Events.message = {
@@ -18,7 +36,7 @@ Element.Events.message = {
 	}
 };
 
-
+/* the class */
 var PostMessager  = new Class({
 	
 	Implements: [Options,Events],

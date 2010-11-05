@@ -1,7 +1,7 @@
 name:  PostMessager
 author:  davidwalsh
-current:  
-category:  
-tags:  []
-docs:  
-demo:  
+current:  0.2
+category:  Request
+tags:  [window,postMessage,crossdomain,ajax]
+docs:  http://davidwalsh.name/js/postmessager
+demo:  http://davidwalsh.name/js/postmessager
