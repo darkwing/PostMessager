@@ -35,7 +35,7 @@ var PostMessager  = new Class({
 	
 	initialize: function(destFrame,options) {
 		this.setOptions(options);
-		this.source = document.id(this.window.source);
+		this.source = document.id(this.options.source);
 		this.dest = document.id(destFrame);
 		
 		this.allowReceive = this.options.allowReceive;
@@ -53,9 +53,9 @@ var PostMessager  = new Class({
 		this.start();
 	},
 	
-	send: function(message) {
+	send: function(message,URI) {
 		if(this.allowSend) {
-			destFrame.postMessage(message);
+			destFrame.postMessage(message,URI);
 			this.fireEvent('send',[message,this.dest]);
 		}
 	},
