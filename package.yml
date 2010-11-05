@@ -1,6 +1,6 @@
 name:  PostMessager
 author:  davidwalsh
-current:  0.3
+current:  0.4
 category:  Request
 tags:  [window,postMessage,crossdomain,ajax]
 docs:  http://davidwalsh.name/js/postmessager
