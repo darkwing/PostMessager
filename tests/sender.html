@@ -16,7 +16,6 @@
 		//post messager
 		var pm = new PostMessager(iframe,{
 			onSend: function(message,dest) {
-				console.log(iframe);
 				console.log('sending "',message,'" to ',dest);
 			},
 			onReceive: function(message,source,origin) {
